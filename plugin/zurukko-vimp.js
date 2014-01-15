@@ -23,7 +23,7 @@ var INFO = xml`
     var desc = "Read current page with zurukko";
     var command = function (args) {
         var location = content.document.location;
-        var newURL = location.protocol + location.host + ".zurukko.jp" + location.pathname;
+        var newURL = "http://" + location.host + ".zurukko.jp" + location.pathname;
         liberator.open(newURL);
     };
 
