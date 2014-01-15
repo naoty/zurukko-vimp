@@ -22,8 +22,9 @@ var INFO = xml`
     var name = "zurukko";
     var desc = "Read current page with zurukko";
     var command = function (args) {
-        var zurukkoHost = location.host + ".zurukko.jp";
-        location.href = location.protocol + zurukkoHost + location.pathname;
+        var location = content.document.location;
+        var newURL = location.protocol + location.host + ".zurukko.jp" + location.pathname;
+        liberator.open(newURL);
     };
 
     commands.addUserCommand([name], desc, command);
