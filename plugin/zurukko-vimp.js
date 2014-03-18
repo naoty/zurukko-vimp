@@ -1,6 +1,6 @@
 var INFO = xml`
 <plugin name="zurukko-vimp.js"
-        version="0.1"
+        version="0.2"
         summary="Read current page with zurukko"
         href="http://github.com/naoty/zurukko-vimp"
         xmlns="http://vimperator.org/namespaces/liberator">
@@ -24,7 +24,7 @@ var INFO = xml`
     var command = function (args) {
         var location = content.document.location;
         var newURL = "http://" + location.host + ".zurukko.jp" + location.pathname;
-        liberator.open(newURL);
+        liberator.open(newURL, liberator.NEW_TAB);
     };
 
     commands.addUserCommand([name], desc, command);
